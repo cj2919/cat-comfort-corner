@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Comfort Corner</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Cat Comfort Corner</h1>
+      <p>Choose a cat, pick an action, and set the room noise level.</p>
+    </header>
+
+    <main>
+      <!-- These buttons will let JavaScript remember which cat was selected. -->
+      <section aria-labelledby="cat-heading">
+        <h2 id="cat-heading">1. Choose a cat</h2>
+
+        <div id="cat-choices">
+          <button class="cat-button" type="button" data-cat="sweet">
+            <img class="cat-photo" src="images/cat1.jpg" alt="Mantou (馒头), sweet and friendly">
+            <span class="cat-name">Mantou (馒头)</span>
+            <span class="cat-personality">Sweet and Friendly</span>
+          </button>
+
+          <button class="cat-button" type="button" data-cat="shy">
+            <img class="cat-photo" src="images/cat2.jpg" alt="Naicha (奶茶), shy and sensitive">
+            <span class="cat-name">Naicha (奶茶)</span>
+            <span class="cat-personality">Shy and Sensitive</span>
+          </button>
+
+          <button class="cat-button" type="button" data-cat="playful">
+            <img class="cat-photo" src="images/cat3.jpg" alt="Xuegao (雪糕), playful and food-loving">
+            <span class="cat-name">Xuegao (雪糕)</span>
+            <span class="cat-personality">Playful and Food-Loving</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Each action button stores a short action name for JavaScript. -->
+      <section aria-labelledby="action-heading">
+        <h2 id="action-heading">2. Choose an action</h2>
+
+        <div id="action-choices">
+          <button class="action-button" type="button" data-action="pet">Pet</button>
+          <button class="action-button" type="button" data-action="feed">Feed</button>
+          <button class="action-button" type="button" data-action="play">Play</button>
+          <button class="action-button" type="button" data-action="space">Give Space</button>
+        </div>
+      </section>
+
+      <!-- Values from 0 to 50 will be Quiet; values above 50 will be Noisy. -->
+      <section aria-labelledby="noise-heading">
+        <h2 id="noise-heading">3. Set the room noise</h2>
+
+        <label for="noise-slider">Noise level</label>
+        <div>
+          <span>Quiet</span>
+          <input id="noise-slider" type="range" min="0" max="100" value="25">
+          <span>Noisy</span>
+        </div>
+        <output id="noise-value" for="noise-slider">Current level: Quiet (25)</output>
+      </section>
+
+      <!-- JavaScript will replace this text and can change its background color. -->
+      <section id="response-area" aria-labelledby="response-heading" aria-live="polite">
+        <h2 id="response-heading">Cat response</h2>
+        <p id="response-text">Choose a cat and an action to see its response.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
